@@ -1,5 +1,5 @@
 resource "aws_lambda_function" "unsubscriber" {
-  s3_bucket     = var.lambda_zip_bucket
+  s3_bucket     = data.aws_caller_identity.current.name == "us-east-1" ? var.lambda_zip_bucket : "${var.lambda_zip_bucket}-${data.aws_caller_identity.current.name}"
   s3_key        = "axiom-cloudwatch-forwarder/v${var.lambda_zip_version}/forwarder.zip"
   function_name = "${var.prefix}-unsubscriber"
   logging_config {
