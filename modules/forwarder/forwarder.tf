@@ -49,7 +49,7 @@ resource "aws_iam_role" "forwarder" {
 
 resource "aws_cloudwatch_log_group" "forwarder" {
   name              = "/aws/axiom/${var.prefix}-forwarder"
-  retention_in_days = 1
+  retention_in_days = var.cloudwatch_log_retention
   tags = {
     PartOf    = var.prefix
     Platform  = "Axiom"

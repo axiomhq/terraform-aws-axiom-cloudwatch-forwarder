@@ -26,3 +26,9 @@ variable "log_groups_prefix" {
   description = "The prefix of the CloudWatch log groups that will trigger the Axiom CloudWatch Forwarder Lambda"
   default     = ""
 }
+
+variable "cloudwatch_log_retention" {
+  type        = number
+  description = "CloudWatch log group retention in days"
+  default     = 1
+}
