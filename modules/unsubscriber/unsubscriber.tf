@@ -71,7 +71,7 @@ resource "aws_iam_role_policy" "unsubscriber" {
 
 resource "aws_cloudwatch_log_group" "unsubscriber" {
   name              = "/aws/axiom/${var.prefix}-unsubscriber"
-  retention_in_days = 1
+  retention_in_days = var.cloudwatch_log_retention
   tags = {
     PartOf    = var.prefix
     Platform  = "Axiom"

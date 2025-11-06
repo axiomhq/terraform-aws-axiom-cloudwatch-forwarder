@@ -32,3 +32,9 @@ variable "axiom_url" {
   default     = "https://api.axiom.co"
 }
 
+variable "cloudwatch_log_retention" {
+  type        = number
+  description = "CloudWatch log group retention in days"
+  default     = 1
+}
+

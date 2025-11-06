@@ -88,7 +88,7 @@ resource "aws_iam_role_policy" "listener" {
 
 resource "aws_cloudwatch_log_group" "listener" {
   name              = "/aws/axiom/${var.prefix}-listener"
-  retention_in_days = 1
+  retention_in_days = var.cloudwatch_log_retention
   tags = {
     PartOf    = var.prefix
     Platform  = "Axiom"
