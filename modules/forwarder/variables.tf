@@ -38,3 +38,9 @@ variable "cloudwatch_log_retention" {
   default     = 1
 }
 
+variable "data_tags" {
+  type        = string
+  description = "Custom tags to add to all logs forwarded to Axiom (format: key1=value1,key2=value2)"
+  default     = ""
+}
+
