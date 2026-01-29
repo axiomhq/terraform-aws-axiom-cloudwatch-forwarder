@@ -15,6 +15,7 @@ resource "aws_lambda_function" "forwarder" {
       AXIOM_TOKEN   = var.axiom_token
       AXIOM_DATASET = var.axiom_dataset
       AXIOM_URL     = var.axiom_url
+      DATA_TAGS     = join(",", [for k, v in var.data_tags : "${k}=${v}"])
     }
   }
 
