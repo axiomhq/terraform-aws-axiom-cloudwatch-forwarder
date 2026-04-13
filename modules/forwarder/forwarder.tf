@@ -12,10 +12,12 @@ resource "aws_lambda_function" "forwarder" {
 
   environment {
     variables = {
-      AXIOM_TOKEN   = var.axiom_token
-      AXIOM_DATASET = var.axiom_dataset
-      AXIOM_URL     = var.axiom_url
-      DATA_TAGS     = join(",", [for k, v in var.data_tags : "${k}=${v}"])
+      AXIOM_TOKEN    = var.axiom_token
+      AXIOM_DATASET  = var.axiom_dataset
+      AXIOM_URL      = var.axiom_url
+      AXIOM_EDGE     = var.axiom_edge
+      AXIOM_EDGE_URL = var.axiom_edge_url
+      DATA_TAGS      = join(",", [for k, v in var.data_tags : "${k}=${v}"])
     }
   }
 
