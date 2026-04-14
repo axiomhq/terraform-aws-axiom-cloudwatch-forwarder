@@ -13,7 +13,7 @@ variable "lambda_zip_bucket" {
 variable "lambda_zip_version" {
   type        = string
   description = "Version of the Axiom Lambda"
-  default     = "1.2.0"
+  default     = "1.3.0"
 }
 
 variable "axiom_dataset" {
@@ -30,6 +30,18 @@ variable "axiom_url" {
   type        = string
   description = "Axiom's API URL"
   default     = "https://api.axiom.co"
+}
+
+variable "axiom_edge" {
+  type        = string
+  description = "Regional edge domain for ingestion (e.g., eu-central-1.aws.edge.axiom.co). When set, data is sent to https://{edge}/v1/ingest/{dataset}."
+  default     = ""
+}
+
+variable "axiom_edge_url" {
+  type        = string
+  description = "Explicit edge URL for ingest operations. If a path is provided, the URL is used as-is. If no path is provided, /v1/ingest/{dataset} is appended. Takes precedence over axiom_edge."
+  default     = ""
 }
 
 variable "cloudwatch_log_retention" {
