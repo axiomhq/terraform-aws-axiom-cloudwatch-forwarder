@@ -56,3 +56,9 @@ variable "data_tags" {
   default     = {}
 }
 
+variable "data_message_key" {
+  type        = string
+  description = "Key to use as the top-level prefix for parsed log fields. Overrides the auto-detected service name (e.g., set to 'app' to get app.level, app.msg instead of unknown.level)."
+  default     = ""
+}
+
